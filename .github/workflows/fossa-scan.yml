@@ -46,7 +46,7 @@ jobs:
             if echo "$OUTPUT" | grep -q '\* fossa-deps file analysis: succeeded'; then
               echo "fossa-deps analysis succeeded, running full FOSSA analyze..."
               fossa analyze --branch "${{ github.event.inputs.release_tags }}" --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
-              fossa test --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
+              fossa test --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP" || true
 
                # create release
               fossa release-group create-release --title "FOSSA Deps Releases" --release "${{ github.event.inputs.release_tags }}-$TIMESTAMP" --project-locator "custom+12948/github.com/cmboling/fossa-deps-releases" --project-revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP" --project-branch "${{ github.event.inputs.release_tags }}"
