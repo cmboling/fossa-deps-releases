@@ -45,7 +45,7 @@ jobs:
       
             if echo "$OUTPUT" | grep -q '\* fossa-deps file analysis: succeeded'; then
               echo "fossa-deps analysis succeeded, running full FOSSA analyze..."
-              fossa analyze --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
+              fossa analyze --branch "${{ github.event.inputs.release_tags }}" --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
               fossa test --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
             else
               echo "fossa-deps analysis failed, skipping full analyze for $TAG"
