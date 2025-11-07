@@ -1,4 +1,4 @@
 referenced-dependencies:
-  - type: gem
-    name: rails
-    version: 7.1.0
+  - type: npm
+    name: lodash
+    version: 4.17.21
