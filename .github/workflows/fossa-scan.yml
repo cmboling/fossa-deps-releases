@@ -46,7 +46,7 @@ jobs:
             if echo "$OUTPUT" | grep -q '\* fossa-deps file analysis: succeeded'; then
               echo "fossa-deps analysis succeeded, running full FOSSA analyze..."
               fossa analyze --revision "$TIMESTAMP"
-              fossa test
+              fossa test --revision "$TIMESTAMP"
             else
               echo "fossa-deps analysis failed, skipping full analyze for $TAG"
             fi
