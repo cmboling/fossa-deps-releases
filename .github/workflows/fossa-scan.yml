@@ -49,7 +49,7 @@ jobs:
               fossa test --revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP"
 
                # create release
-              fossa release-group create-release --title "FOSSA Deps Releases" --release "${{ github.event.inputs.release_tags }}" --project-locator "custom+12948/github.com/cmboling/fossa-deps-releases" --project-revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP" --project-branch "${{ github.event.inputs.release_tags }}"
+              fossa release-group create-release --title "FOSSA Deps Releases" --release "${{ github.event.inputs.release_tags }}-$TIMESTAMP" --project-locator "custom+12948/github.com/cmboling/fossa-deps-releases" --project-revision "${{ github.event.inputs.release_tags }}-$TIMESTAMP" --project-branch "${{ github.event.inputs.release_tags }}"
             else
               echo "fossa-deps analysis failed, skipping full analyze for $TAG"
             fi
