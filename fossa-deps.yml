@@ -1,4 +1,4 @@
 referenced-dependencies:
-  - type: npm
-    name: lodash
-    version: 4.17.21
+  - type: git
+    name: https://github.com/cilium/cilium
+    version: 1.18.4
